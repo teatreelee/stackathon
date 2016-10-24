@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Tracker</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet" />
+    <script src="/annyang.js"></script>
+    <script src="/angular/angular.js" defer></script>
+    <script src="/app.js" defer></script>
+</head>
+
+<body ng-app="annyang" ng-controller="MainCtrl">
+  <div class="header">
+    <h1>Word Tracker</h1>
+  </div>
+
+  <div class="container">
+
+  <div class="annyangOptions">
+    <!-- <button type="button" class="btn btn-danger">Pause/Resume</button> -->
+    <button class="btn btn-default" ng-click="toggle()">
+      <span class="glyphicon" ng-class="{'glyphicon-pause': isPlaying(), 'glyphicon-play': !isPlaying()}"></span>
+    </button>
+    <button class="btn btn-default" ng-click="stopOrStart()">
+      <span class="glyphicon" ng-class="{'glyphicon-stop': isOn(), 'glyphicon-refresh': !isOn()}"></span>
+    </button>
+  </div>
+      <div class="col-xs-6 col-xs-offset-3" class="wordForm">
+        <form name="annyangForm" ng-submit="submitForm(word)">
+        <div class="form-group">
+        <label><h3>Type word to Track:</h3></label>
+        <input type="text" name="word" ng-model="word" required ng-minlength="1"><br>
+      </div>
+      <input type="submit" class="submitButton">
+        </form>
+
+    </div>
+
+
+
+    <div class="tracker">
+      <table class="table">
+        <thead>
+          <tr class="row">
+            <th>Word</th>
+            <th>Count</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+
+          <tbody ng-repeat="word in words">
+          <tr class="row">
+           <td class="data">{{word.trackedWord}}</th>
+           <td class="data">{{word.count}}</td>
+           <td class="data">Sends Text When Word is Said</td>
+           </td>
+          </tr>
+          </tbody>
+          </table>
+    </div>
+
+<!--     <div id="summary">
+      <div> <h3> Summary </h3> </div>
+      <div>Total Number of Words: </div>
+      <div>Words Per Minute: </div>
+      <div>Number of Unique Words: </div>
+      <div>Frequency of Tracked Words: </div>
+    </div>
+</div>
+ -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script> -->
+</body>
+</html>

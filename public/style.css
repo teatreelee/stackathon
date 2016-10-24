@@ -1,0 +1,57 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+label {
+  font-size: 20px;
+}
+
+input {
+  font-size: 20px;
+  margin: 10px;
+}
+.header {
+  font-family: 'Homemade Apple', cursive;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F26964;
+  padding: 20px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.container {
+  text-align: center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    margin-right:-4px;
+}
+
+.annyangOptions {
+  margin: 15px;
+}
+.submitButton {
+  margin: 10px;
+}
+
+.wordForm {
+
+}
+
+.tracker {
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+.data {
+  text-align: center;
+}
+
+p {
+  z-index: 2;
+}
